@@ -2,18 +2,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Kullanıcı Girişi Ekranı</title>
     </h:head>
     <h:body>
-        <h:form id="form">
+        <h:form id="girisForm">
             <div align="center">
-                <p:growl sticky="true" globalOnly="true" showDetail="true"/>
-                <p:panelGrid columns="3" style="position: relative; top: 150px;">
-                    <p:inputText value="#{girisMB.klnc}"/>
-                    <p:password value="#{girisMB.sfr}"/>
-                    <p:commandButton value="GİRİŞ" update="form" action="#{girisMB.girisKontroll()}"/>
+                <p:growl sticky="true" showDetail="true" globalOnly="true"/>
+                <p:panelGrid columns="2" style="position: relative; top: 150px;">
+                    <f:facet name="header">
+                        <div align="center">
+                            HOŞGELDİNİZ
+                        </div>
+                    </f:facet>
+
+                    <p:outputLabel value="Kullanıcı Adı"/>
+                    <p:inputText 
+                                 value="#{girisMB.klnc}"
+                                 />
+                    
+
+                    <p:outputLabel value="Şifre"/>
+                    <p:password 
+                                value="#{girisMB.sfr}"
+                                />
+                    
+
+                    <f:facet name="footer">
+                        <div align="center">
+                            <p:commandButton value="GİRİŞ" action="#{girisMB.girisKontroll()}" update="girisForm"/>
+                            <p:commandButton value="GERİ DÖN" action="giris.xhtml" update="girisForm"/>
+                        </div>
+                    </f:facet>
                 </p:panelGrid>
             </div>
         </h:form>

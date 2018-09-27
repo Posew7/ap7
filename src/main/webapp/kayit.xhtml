@@ -5,35 +5,23 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Admin Girişi Ekranı</title>
+        <title>Kullanıcı Kayıt Ekranı</title>
     </h:head>
     <h:body>
-        <h:form id="girisForm">
+        <h:form id="form">
             <div align="center">
-                <p:growl sticky="true" showDetail="true" globalOnly="true"/>
+                <p:messages globalOnly="true" showDetail="true"/>
                 <p:panelGrid columns="2" style="position: relative; top: 150px;">
-                    <f:facet name="header">
-                        <div align="center">
-                            HOŞGELDİNİZ
-                        </div>
-                    </f:facet>
-                    
                     <p:outputLabel value="Kullanıcı Adı"/>
-                    <p:inputText 
-                                 value="#{girisMB.klnc}"
-                                 />
-                    
+                    <p:inputText value="#{girisMB.klnc}"/>
                     
                     <p:outputLabel value="Şifre"/>
-                    <p:password 
-                                value="#{girisMB.sfr}"
-                                 />
-                    
+                    <p:password value="#{girisMB.sfr}"/>
                     
                     <f:facet name="footer">
                         <div align="center">
-                            <p:commandButton value="GİRİŞ" action="#{girisMB.girisKontrol()}" update="girisForm"/>
-                            <p:commandButton value="GERİ DÖN" action="giris.xhtml" update="girisForm"/>
+                            <p:commandButton value="KAYIT OL" update="form" action="#{girisMB.kayit()}"/>
+                            <p:commandButton value="GERİ DÖN" update="form" action="giris.xhtml"/>
                         </div>
                     </f:facet>
                 </p:panelGrid>

@@ -62,4 +62,17 @@ public class girisMB implements Serializable {
         }
     }
 
+    public String kayit() {
+
+        Grsklnc g = new Grsklnc();
+
+        g.setKlnc(klnc);
+        g.setSfr(sfr);
+
+        grsklncFacade.create(g);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("BAŞARILI", klnc + " isimli üye kayıt oldu"));
+
+        return "";
+    }
+
 }
