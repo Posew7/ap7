@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="content">
+                <h:form id="form">
+                    <div align="left">
+                        <p:messages globalOnly="true" showDetail="true"/>
+                        <p:panelGrid columns="3">
+                            <p:outputLabel value="Ad"/>
+                            <p:inputText value="#{rehberMB.ad}"
+                                         id="ad"
+                                         required="true"
+                                         requiredMessage="boş geçilemez"/>
+                            <p:message for="ad"/>
+                            <p:outputLabel value="Bilgi"/>
+                            <p:inputText value="#{rehberMB.bilgi}"
+                                         id="bilgi"
+                                         required="true"
+                                         requiredMessage="boş geçilemez"/>
+                            <p:message for="bilgi"/>
+                            <p:outputLabel value="Telefon"/>
+                            <p:inputMask value="#{rehberMB.tel}"
+                                         mask="999/999/9999"
+                                         id="tel"
+                                         required="true"
+                                         requiredMessage="boş geçilemez"/>
+                            <p:message for="tel"/>
+                            <f:facet name="footer">
+                                <div align="center">
+                                    <p:commandButton value="EKLE" update="form" action="#{rehberMB.ekle()}"/>
+                                </div>
+                            </f:facet>
+                        </p:panelGrid>
+                    </div>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
