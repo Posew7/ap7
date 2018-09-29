@@ -45,7 +45,7 @@ public class girisMB implements Serializable {
     public String girisKontrol() {
         boolean sonuc = grsdmnFacade.giriseYetkiliMi(klnc, sfr);
         if (sonuc) {
-            return "anasayfa.xhtml";
+            return "anasayf.xhtml";
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("HATA", "kullanıcı adı veya şifre yanlış"));
             return "";
@@ -55,7 +55,7 @@ public class girisMB implements Serializable {
     public String girisKontroll() {
         boolean sonuc = grsklncFacade.giriseYetkiliMi(klnc, sfr);
         if (sonuc) {
-            return "anasayfa.xhtml";
+            return "anasayfaa.xhtml";
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("HATA", "kullanıcı adı veya şifre yanlış"));
             return "";
